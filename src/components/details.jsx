@@ -8,20 +8,15 @@ export default function Details({ file ,search}) {
       {file.map((a) => {
         return (
           <div key={a.id}>
-            {search!=""?<Highlighter
+            {search!=""?<><Highlighter
               highlightClassName="YourHighlightClass"
               searchWords={[search]}
               autoEscape={true}
               textToHighlight={a.name}
-            />:""}
-            {/* <Highlighter
-              highlightClassName="YourHighlightClass"
-              searchWords={[search]}
-              autoEscape={true}
-              textToHighlight={a.name}
-            /> */}
-            <h2>{a.name}</h2>
-            <p>{a.description}</p>
+            /><p>{a.description}</p></>:<> <h2>{a.name}</h2>
+            <p>{a.description}</p></>}
+           
+           
           </div>
         );
       })}
